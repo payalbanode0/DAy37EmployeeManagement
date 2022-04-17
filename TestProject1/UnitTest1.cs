@@ -4,6 +4,7 @@ using RestSharp;
 using System.Net;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System;
 
 namespace TestProject1
 {
@@ -32,9 +33,9 @@ public class UnitTest1
         return response;
     }
     /* UC1:- Ability to Retrieve all Employees in EmployeePayroll JSON Server.
-                 - Use JSON Server and RESTSharp to save the EmployeePayroll Data of id, name, and salary.
-                 - Retrieve in the MSTest Test and corresponding update the Memory with the Data.
-        */
+             - Use JSON Server and RESTSharp to save the EmployeePayroll Data of id, name, and salary.
+             - Retrieve in the MSTest Test and corresponding update the Memory with the Data.
+    */
     [TestMethod]
     public void onCallingGETApi_ReturnEmployeeList()
     {
@@ -116,5 +117,34 @@ public class UnitTest1
             System.Console.WriteLine(response.Content);
         }
     }
+    /*UC4:- Ability to Update Salary in Employee Payroll JSON Server.
+               - Firstly Update the Salary in Memory.
+               - Post that Use JSON Server and RESTSharp to Update the salary.
+       */
+    [TestMethod]
+    public void OnCallingPutAPI_ReturnEmployeeObject()
+    {
+        // Arrange
+        // Initialize the request for PUT to add new employee
+        RestRequest request = new RestRequest("/employees/12", Method.Put);
+        request.RequestFormat = DataFormat.Json;
+
+        request.AddBody(new Employee
+        {
+            name = "Shubham",
+            salary = "65000"
+        });
+
+        // Act
+        RestResponse response = client.ExecuteAsync(request).Result;
+
+        // Assert
+        Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+        Employee employee = JsonConvert.DeserializeObject<Employee>(response.Content);
+        Assert.AreEqual("Shubham", employee.name);
+        Assert.AreEqual("65000", employee.salary);
+        Console.WriteLine(response.Content);
+    }
+
 
 }
