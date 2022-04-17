@@ -1,0 +1,16 @@
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\bin\Debug\net5.0\Day37EmployeeManagement.exe
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\bin\Debug\net5.0\Day37EmployeeManagement.deps.json
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\bin\Debug\net5.0\Day37EmployeeManagement.runtimeconfig.json
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\bin\Debug\net5.0\Day37EmployeeManagement.runtimeconfig.dev.json
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\bin\Debug\net5.0\Day37EmployeeManagement.dll
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\bin\Debug\net5.0\Day37EmployeeManagement.pdb
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\Day37EmployeeManagement.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\Day37EmployeeManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\Day37EmployeeManagement.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\Day37EmployeeManagement.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\Day37EmployeeManagement.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\Day37EmployeeManagement.dll
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\refint\Day37EmployeeManagement.dll
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\Day37EmployeeManagement.pdb
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\Day37EmployeeManagement.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\day37emp\Day37EmployeeManagement\Day37EmployeeManagement\obj\Debug\net5.0\ref\Day37EmployeeManagement.dll
