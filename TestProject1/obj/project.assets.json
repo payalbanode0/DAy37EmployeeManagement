@@ -459,7 +459,7 @@
           "lib/netstandard2.0/NuGet.Frameworks.dll": {}
         }
       },
-      "RestSharp/107.3.1-alpha.0.24": {
+      "RestSharp/107.3.0": {
         "type": "package",
         "dependencies": {
           "System.Text.Json": "5.0.0"
@@ -2702,10 +2702,10 @@
         "nuget.frameworks.nuspec"
       ]
     },
-    "RestSharp/107.3.1-alpha.0.24": {
-      "sha512": "OD0z6QDlD2Qx4UNV3UhroNYh/77jJVRcvReSOxP5aAv0vlCOqKVe6TBZXQtR/ffG8/1qdbQbzUXxQj6Ke5oALA==",
+    "RestSharp/107.3.0": {
+      "sha512": "qu+A+VAnVLX3OeWVNm11UJz0aVErqSfYqIiOUbJM9x98uLymCOoL/oXRAjMb6XHra27WXxHmzy9EKEOKXWR6Pw==",
       "type": "package",
-      "path": "restsharp/107.3.1-alpha.0.24",
+      "path": "restsharp/107.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2715,7 +2715,7 @@
         "lib/net6.0/RestSharp.xml",
         "lib/netstandard2.0/RestSharp.dll",
         "lib/netstandard2.0/RestSharp.xml",
-        "restsharp.107.3.1-alpha.0.24.nupkg.sha512",
+        "restsharp.107.3.0.nupkg.sha512",
         "restsharp.nuspec",
         "restsharp.png"
       ]
@@ -6187,7 +6187,7 @@
       "MSTest.TestAdapter >= 2.2.3",
       "MSTest.TestFramework >= 2.2.3",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
-      "RestSharp >= 107.3.1-alpha.0.24",
+      "RestSharp >= 107.3.0",
       "coverlet.collector >= 3.0.2"
     ]
   },
@@ -6248,7 +6248,7 @@
           },
           "RestSharp": {
             "target": "Package",
-            "version": "[107.3.1-alpha.0.24, )"
+            "version": "[107.3.0, )"
           },
           "coverlet.collector": {
             "target": "Package",

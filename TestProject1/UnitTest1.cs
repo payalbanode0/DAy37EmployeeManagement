@@ -1,16 +1,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Day37EmployeeManagement;
+using RestSharp;
 using System.Net;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using RestSharp;
-using Day37EmployeeManagement;
 
 namespace TestProject1
 {
 
 }
 [TestClass]
-public class RestSharpTestCase
+public class UnitTest1
 {
     RestClient client;
 
@@ -35,8 +35,7 @@ public class RestSharpTestCase
     /* UC1:- Ability to Retrieve all Employees in EmployeePayroll JSON Server.
              - Use JSON Server and RESTSharp to save the EmployeePayroll Data of id, name, and salary.
              - Retrieve in the MSTest Test and corresponding update the Memory with the Data.
-   
-     */
+    */
     [TestMethod]
     public void onCallingGETApi_ReturnEmployeeList()
     {
