@@ -31,11 +31,10 @@ public class UnitTest1
         RestResponse response = client.ExecuteAsync(request).Result;
         return response;
     }
-
     /* UC1:- Ability to Retrieve all Employees in EmployeePayroll JSON Server.
-             - Use JSON Server and RESTSharp to save the EmployeePayroll Data of id, name, and salary.
-             - Retrieve in the MSTest Test and corresponding update the Memory with the Data.
-    */
+                 - Use JSON Server and RESTSharp to save the EmployeePayroll Data of id, name, and salary.
+                 - Retrieve in the MSTest Test and corresponding update the Memory with the Data.
+        */
     [TestMethod]
     public void onCallingGETApi_ReturnEmployeeList()
     {
@@ -51,4 +50,71 @@ public class UnitTest1
             System.Console.WriteLine("id: " + e.id + ", Name: " + e.name + ", Salary: " + e.salary);
         }
     }
+    /* UC2:- Ability to add a new Employee to the EmployeePayroll JSON Server.
+                - Use JSON Server and RESTSharp to save the EmployeePayroll Data of id, name, and salary.
+                - Ability to add using RESTSharp to JSONServer in the MSTest Test Case and then on success add to Employee Payroll .
+                - Validate with the successful Count 
+       */
+    [TestMethod]
+    public void OnCallingPostAPI_ReturnEmployeeObject()
+    {
+        // Arrange
+        // Initialize the request for POST to add new employee
+        RestRequest request = new RestRequest("/employees", Method.Post);
+        request.RequestFormat = DataFormat.Json;
+
+        request.AddBody(new Employee
+        {
+            id = 8,
+            name = "Clark",
+            salary = "15000"
+        });
+
+        //Act
+        RestResponse response = client.ExecuteAsync(request).Result;
+
+        //Assert
+        Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
+        Employee dataResponse = JsonConvert.DeserializeObject<Employee>(response.Content);
+        Assert.AreEqual("Clark", dataResponse.name);
+        Assert.AreEqual("15000", dataResponse.salary);
+        System.Console.WriteLine(response.Content);
+    }
+    /*UC3:- Ability to add multiple Employee to  the EmployeePayroll JSON Server.
+                - Use JSON Server and RESTSharp to add  multiple Employees to Payroll
+                - Ability to add using RESTSharp to  JSONServer in the MSTest Test Case and  then on success add to  EmployeePayrollService
+                - Validate with the successful Count
+        */
+
+    [TestMethod]
+    public void GivenMultipleEmployee_OnPost_ThenShouldReturnEmployeeList()
+    {
+        // Arrange
+        List<Employee> employeeList = new List<Employee>();
+        employeeList.Add(new Employee { name = "Vinaya", salary = "15000" });
+        employeeList.Add(new Employee { name = "Ajaya kumar", salary = "7000" });
+        employeeList.Add(new Employee { name = "Powan", salary = "9000" });
+        employeeList.Add(new Employee { name = "Swathi", salary = "12000" });
+        // Iterate the loop for each employee
+        foreach (var emp in employeeList)
+        {
+            // Initialize the request for POST to add new employee
+            RestRequest request = new RestRequest("/employees", Method.Post);
+            request.RequestFormat = DataFormat.Json;
+
+            //Added parameters to the request object such as the content-type and attaching the jsonObj with the request
+            request.AddBody(emp);
+
+            //Act
+            RestResponse response = client.ExecuteAsync(request).Result;
+
+            //Assert
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
+            Employee employee = JsonConvert.DeserializeObject<Employee>(response.Content);
+            Assert.AreEqual(emp.name, employee.name);
+            Assert.AreEqual(emp.salary, employee.salary);
+            System.Console.WriteLine(response.Content);
+        }
+    }
+
 }
