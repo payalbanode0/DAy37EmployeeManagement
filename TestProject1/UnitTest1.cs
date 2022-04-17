@@ -33,9 +33,9 @@ public class UnitTest1
         return response;
     }
     /* UC1:- Ability to Retrieve all Employees in EmployeePayroll JSON Server.
-             - Use JSON Server and RESTSharp to save the EmployeePayroll Data of id, name, and salary.
-             - Retrieve in the MSTest Test and corresponding update the Memory with the Data.
-    */
+              - Use JSON Server and RESTSharp to save the EmployeePayroll Data of id, name, and salary.
+              - Retrieve in the MSTest Test and corresponding update the Memory with the Data.
+     */
     [TestMethod]
     public void onCallingGETApi_ReturnEmployeeList()
     {
@@ -145,6 +145,22 @@ public class UnitTest1
         Assert.AreEqual("65000", employee.salary);
         Console.WriteLine(response.Content);
     }
+    /*UC5:- Ability to Delete Employee from Employee Payroll JSON Server.
+                - Use JSON Server and RESTSharp to then delete the employee by ID.
+                - Delete the Employee from the Memory.
+        */
+    [TestMethod]
+    public void OnCallingDeleteAPI_ReturnSuccessStatus()
+    {
+        // Arrange
+        // Initialize the request for PUT to add new employee
+        RestRequest request = new RestRequest("/employees/4", Method.Delete);
 
+        // Act
+        RestResponse response = client.ExecuteAsync(request).Result;
 
+        // Assert
+        Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
+        Console.WriteLine(response.Content);
+    }
 }
